@@ -1,6 +1,7 @@
 
 sources:
-  - name: gz_raw_data
+  - name: raw
+    schema: gz_raw_data
     tables:
       - name: product
         identifier: raw_gz_product
