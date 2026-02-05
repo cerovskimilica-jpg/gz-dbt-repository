@@ -32,11 +32,23 @@ sources:
           - name: ship_cost
       - name: adwords
         identifier: raw_gz_adwords
+        tests:
+        - unique:
+            column_name: "(date_date || '-' || campaign_key)"
       - name: facebook 
         identifier: raw_gz_facebook
+        tests:
+        - unique:
+            column_name: "(date_date || '-' || campaign_key)"
       - name: criteo
-        identifier: raw_gz_criteo
+        identifier: raw_gz_criteo  
+        tests:
+        - unique:
+            column_name: "(date_date || '-' || campaign_key)"
       - name: bing
         identifier: raw_gz_bing 
+        tests:
+        - unique:
+            column_name: "(date_date || '-' || campaign_key)"
 
 
