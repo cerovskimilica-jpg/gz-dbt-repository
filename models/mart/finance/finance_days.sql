@@ -1,5 +1,5 @@
 SELECT
-    date_date AS DATE,
+    date_date,
     COUNT(orders_id) AS Total_Nb_transactions,
     ROUND(SUM(revenue),0) AS Total_revenue,
     ROUND(SUM(revenue)/COUNT(orders_id), 0) AS average_basket,

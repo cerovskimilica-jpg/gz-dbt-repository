@@ -1,4 +1,3 @@
-
 sources:
   - name: raw
     schema: gz_raw_data
@@ -9,8 +8,8 @@ sources:
         columns:
           - name: products_id
             tests:
-            - unique
-            - not_null
+              - unique
+              - not_null
           - name: purchase_cost
       - name: sales
         identifier: raw_gz_sales
@@ -25,30 +24,37 @@ sources:
         columns:
           - name: orders_id
             tests:
-            - unique
-            - not_null
+              - unique
+              - not_null
           - name: shipping_fee
           - name: logcost
           - name: ship_cost
       - name: adwords
         identifier: raw_gz_adwords
         tests:
-        - unique:
-            column_name: "(date_date || '-' || campaign_key)"
-      - name: facebook 
+          - unique:
+              column_name: "(date_date || '-' || campaign_key)"
+      - name: facebook
         identifier: raw_gz_facebook
         tests:
-        - unique:
-            column_name: "(date_date || '-' || campaign_key)"
+          - unique:
+              column_name: "(date_date || '-' || campaign_key)"
       - name: criteo
-        identifier: raw_gz_criteo  
+        identifier: raw_gz_criteo
         tests:
-        - unique:
-            column_name: "(date_date || '-' || campaign_key)"
+          - unique:
+              column_name: "(date_date || '-' || campaign_key)"
       - name: bing
-        identifier: raw_gz_bing 
+        identifier: raw_gz_bing
         tests:
-        - unique:
-            column_name: "(date_date || '-' || campaign_key)"
+          - unique:
+              column_name: "(date_date || '-' || campaign_key)"
 
-
+models:
+  - name: int_campaigns_day
+    description: campaign agreger
+    columns:
+      - name: date_date
+        tests:
+          - unique
+          - not_null
